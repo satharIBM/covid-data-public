@@ -1,4 +1,4 @@
-# Covid-19 Data Sources
+# COVID-19 Data Sources
 Repository for all public source data used by
 [covid-data-model](https://github.com/covid-projections/covid-data-model)
 and/or
