@@ -35,6 +35,7 @@ and/or
 * [LA Times Tracker](https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/) (California only)
 * [Local Action Tracker](https://www.nlc.org/program-initiative/covid-19-local-action-tracker)
 * [National Association of Counties Tracker](https://ce.naco.org/?dset=COVID-19&ind=Emergency%20Declaration%20Types) -- looks promising
+* [Oxford COVID-19 Response Tracker](https://www.bsg.ox.ac.uk/research/research-projects/oxford-covid-19-government-response-tracker) - Historical country-level intervention data
 
 ### Hospital Capacity Data
 
