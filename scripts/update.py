@@ -25,11 +25,12 @@ class CovidDatasetAutoUpdater:
     """Provides all functionality to auto-update the datasets in the data repository"""
     _JHU_MASTER = r'https://github.com/CSSEGISandData/COVID-19/archive/master.zip'
     _JHU_MASTER_API = r'https://api.github.com/repos/CSSEGISandData/COVID-19/branches/master'
-    _JHU_DATA_DIR = os.path.join('data', 'cases-jhu')
+    _DATA_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'data'))
+    _JHU_DATA_DIR = os.path.join(_DATA_DIR, 'cases-jhu')
     _JHU_DAILY_REPORTS_DIR = os.path.join(_JHU_DATA_DIR, 'csse_covid_19_daily_reports')
 
     _CDS_TIMESERIES = r'https://coronadatascraper.com/timeseries.csv'
-    _CDS_DATA_DIR = os.path.join('data', 'cases-cds')
+    _CDS_DATA_DIR = os.path.join(_DATA_DIR, 'cases-cds')
 
     @staticmethod
     def _stamp():
