@@ -10,6 +10,7 @@ where intervention is one of {shelter_in_place, social_distancing, limited_actio
 from datetime import datetime, timezone
 import json
 import os
+import pytz
 import requests
 
 NACO_URL = 'https://ce.naco.org/python/data?dbset=COVID_Table&dbind=County_Declaration_Type3%7CCounty_Emergency_Declaration%7CCounty_Shelter_In_Place_Policy%7CCounty_Business_Closure_Policy%7CPopulation_total%7CPopulation_over_65_pct&dbyear=2020'
@@ -35,6 +36,13 @@ def transform_json(columns, data):
 
   return {row[fips_index]: row_intervention(row) for row in data}
 
+def stamp():
+    #  String of the current date and time.
+    #  So that we're consistent about how we mark these
+    pacific = pytz.timezone('US/Pacific')
+    d = datetime.now(pacific)
+    return d.strftime('%A %b %d %I:%M:%S %p %Z')
+
 if __name__ == '__main__':
   # Quick hack for development w/o hitting the API every time:
   # if an argument is passed, used that as the data source rather than the URL
@@ -56,5 +64,5 @@ if __name__ == '__main__':
     json.dump(fips_interventions, f)
   version_file = os.path.join(output_dir, 'version.txt')
   with open(version_file, 'w') as f:
-    f.write(now)
-  print(f'wrote {len(fips_interventions)} to {json_file} as {now}')
+    f.write('Updated on {}'.format(stamp()))
+  print(f'wrote {len(fips_interventions)} county interventions to {json_file} at {stamp()}')

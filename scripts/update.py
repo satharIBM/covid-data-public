@@ -5,6 +5,7 @@ import datetime
 import json
 import logging
 import os
+import pytz
 import shutil
 import tempfile
 from zipfile import ZipFile
@@ -34,7 +35,9 @@ class CovidDatasetAutoUpdater:
     def _stamp():
         #  String of the current date and time.
         #  So that we're consistent about how we mark these
-        return datetime.datetime.now().strftime('%A %b %d %I:%M:%S %p')
+        pacific = pytz.timezone('US/Pacific')
+        d = datetime.datetime.now(pacific)
+        return d.strftime('%A %b %d %I:%M:%S %p %Z')
 
     def clone_repo_to_dir(self, url, _dir):
         with open(os.path.join(_dir, 'temp.zip'), 'wb') as zip:
