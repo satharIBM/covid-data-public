@@ -61,7 +61,7 @@ if __name__ == '__main__':
   os.makedirs(output_dir, exist_ok=True)
   json_file = os.path.join(output_dir, 'county-interventions.json')
   with open(json_file, 'w') as f:
-    json.dump(fips_interventions, f)
+    json.dump(fips_interventions, f, indent=2, sort_keys=True)
   version_file = os.path.join(output_dir, 'version.txt')
   with open(version_file, 'w') as f:
     f.write('Updated on {}'.format(stamp()))
