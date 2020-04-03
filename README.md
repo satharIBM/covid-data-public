@@ -14,6 +14,9 @@ and/or
   instead.
 * If data is being downloaded / scraped by a script, check the script in under
   scripts/
+* Git LFS is required to correctly checkout at least the US Census Shapefiles
+  for now because they are very big. You have to run something like `git lfs
+  install` and `git lfs fetch`.
 
 ## Resources
 
