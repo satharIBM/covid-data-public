@@ -1,6 +1,6 @@
 # COVID-19 Data Sources
 Repository for regularly-updated data sets used by
-[covid-data-model](https://github.com/covid-projections/covid-data-model). Anything that we want to re-fetch periodically should live in this repo, along with scripts for automated fetching.
+[covid-data-model](https://github.com/covid-projections/covid-data-model). Anything that we want to re-fetch periodically should definitely live in this repo, along with scripts for automated updating.
 
 ## Notes
 * Use README.md files to document where data has been sourced from.
