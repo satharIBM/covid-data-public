@@ -1,8 +1,6 @@
 # COVID-19 Data Sources
-Repository for all public source data used by
-[covid-data-model](https://github.com/covid-projections/covid-data-model)
-and/or
-[covid-projections](https://github.com/covid-projections/covid-data-model)
+Repository for regularly-updated data sets used by
+[covid-data-model](https://github.com/covid-projections/covid-data-model). Anything that we want to re-fetch periodically should live in this repo, along with scripts for automated fetching.
 
 ## Notes
 * Use README.md files to document where data has been sourced from.
@@ -18,7 +16,8 @@ and/or
   for now because they are very big. You have to run something like `git lfs
   install` and `git lfs fetch`.
 
-## Resources
+## Date sources for current / future use.
+These are data sets that we've found that look interesting and we may want to consider pulling in the future.
 
 ### SIR Data Sources
 
