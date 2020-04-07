@@ -4,10 +4,9 @@ Repository for regularly-updated data sets used by
 
 ## Notes
 * Use README.md files to document where data has been sourced from.
-* When committing updated data, include timestamp / version info to help
-  describe the exact version of the data that's being imported. Consider 
-  including it in a version.txt file as well as in your commit message.  To 
-  the extent possible, we want clear audit trails for incoming data.
+* Data is updated twice daily (midnight and noon, UTC) by a Github Action defined [here](./.github/workflows/update_data.yml). 
+  The action runs [update.sh](./update.sh) and then [push_update.sh](./push_update.sh).
+  To trigger a manual update, see details in the [workfow definition](./.github/workflows/update_data.yml#L6).
 * Don't check in multiple versions of the same data. We can rely on git history
   instead.
 * If data is being downloaded / scraped by a script, check the script in under
